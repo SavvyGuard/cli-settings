@@ -1,0 +1,12 @@
+export SVNROOT=svn+ssh://svnusers@svn-priv.openx.org/svn
+export SVNSLACK=svn+ssh://svnusers@svn-priv.openx.org/svn/trunk/slack-repos
+export DEVROOT=$HOME/src/trunk
+export OX_POLICY_DIRS=$HOME/perl/etc/ox/policy
+export OX_DB_AUTH_CONTEXT=dev
+export OX_WEB_CFG_CONTEXT=dev
+export OX_MCP_AUTH_CONTEXT=dev
+export OX_LDAP_AUTH_CONTEXT=dev
+export OX_NO_PROXY=1
+export OX_NO_EMAIL=1
+export PERL5LIB=$HOME/perl/lib/perl5
+export PATH=$PATH:$HOME/perl/bin:$DEVROOT/build-tools/tools/bin/

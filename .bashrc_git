@@ -1,0 +1,94 @@
+# Custom git shortcuts
+# --------------------
+alias ga='git add'
+alias gaa='git add --all'
+alias gai='git add --patch'
+alias gb='git branch'
+alias gbdel='git branch -d'
+alias gbt='git branch --track'
+alias gbl='git branch'
+alias gcl='git clone'
+alias gcob='git checkout -b'
+alias gcot='git checkout -b --track'
+alias gd='git diff HEAD'
+alias gdc='git diff ORIG_HEAD..'
+alias gds='git diff HEAD --stat'
+alias gdsc='git diff ORIG_HEAD.. --stat'
+alias gfa='git fetch --all -ff'
+alias gg='git grep --line-number --count --color'
+alias gh='git help'
+alias gi='git show'
+alias gl="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
+#alias gl='git log --date-order --decorate --graph --pretty=format:"%h | %an - %ar | %s"'
+alias glc='git log ORIG_HEAD.. --decorate --stat --no-merges --pretty=full'
+alias gm='git merge'
+alias gpua='git pull --all -ff'
+alias gr='git reset HEAD'
+alias grb='git rebase'
+alias gri="git rebase -i HEAD~"
+alias grbc='git rebase --continue'
+alias grba='git rebase --abort'
+alias grta='git remote add'
+alias gs='git status'
+alias gt='git stash -q'
+alias gts='git stash save'
+alias gtp='git stash pop -q'
+alias gtl='git stash list'
+
+# Commit all.
+function gc {
+  if [ -z "$1" ]; then
+    git commit --all --verbose --message='fixup'
+  else
+    git commit --all --verbose --message="$1"
+  fi
+}
+# Amend commit.
+function gca {
+  if [ -z "$1" ]; then
+    git commit --all --amend --reuse-message=HEAD
+  else
+    git commit --all --amend --reuse-message=$1
+  fi
+}
+# Push.
+function gp {
+  if [ -z "$1" ]; then
+    git push origin HEAD
+  else
+    git push origin $1
+  fi
+}
+# Pull.
+function gpu {
+  if [ -z "$1" ]; then
+    git pull --rebase origin master
+  else
+    git pull --rebase origin $1
+  fi
+}
+# Checkout.
+function gco {
+  if [ -z "$1" ]; then
+    git checkout --force master
+  else
+    git checkout --force $1
+  fi
+}
+# Interactive Rebase.
+function grbi {
+  if echo $1 | egrep -q '^[0-9]+$'; then
+    git rebase --interactive HEAD~$1
+  else
+    git rebase --interactive $1
+  fi
+}
+# Show Tag or Make Tag.
+function gtg {
+  if [ -z "$1" ]; then
+    git tag
+  else
+    git tag --force $1 -m "$2"
+  fi
+}
+
