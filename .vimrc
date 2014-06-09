@@ -7,3 +7,5 @@ syntax on
 set clipboard=unnamedplus
 
 colorscheme inkpot
+
+match Todo /\s\+$/
