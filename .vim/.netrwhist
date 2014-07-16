@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/produser/mediation/database/mmdatabase'
-let g:netrw_dirhist_2='/home/produser/mediation/inventory/test'
-let g:netrw_dirhist_3='/home/produser/mediation/api/mmapi/service'
-let g:netrw_dirhist_4='/home/produser/adquality/db-schema'
-let g:netrw_dirhist_5='/var/www/html/wp-content/themes'
-let g:netrw_dirhist_6='/var/www/html/wp-content/uploads/landing-pages/templates/super-slick'
