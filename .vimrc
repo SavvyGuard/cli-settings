@@ -20,3 +20,6 @@ set clipboard=unnamedplus
 colorscheme inkpot                                                                                                                                       
                                                                                                                                                          
 match Todo /\s\+$/             
+
+"Auto add comment line after a comment"
+:set fo+=r
