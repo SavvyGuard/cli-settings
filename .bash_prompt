@@ -15,6 +15,7 @@ if tput setaf 1 &> /dev/null; then
 
   # If the terminal supports at least 256 colors, write out our 256 color based set
   if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
+    TIME_COLOR=$(tput setaf 27) #BLUE
     USER_COLOR=$(tput setaf 27) #BLUE
     PREPOSITION_COLOR=$(tput setaf 7) #WHITE
     DEVICE_COLOR=$(tput setaf 39) #INDIGO
@@ -23,6 +24,7 @@ if tput setaf 1 &> /dev/null; then
   else
   # Otherwise, use colors from our set of 16
     # Original colors from fork
+    TIME_COLOR=$(tput setaf 5) #MAGENTA
     USER_COLOR=$(tput setaf 5) #MAGENTA
     PREPOSITION_COLOR=$(tput setaf 7) #WHITE
     DEVICE_COLOR=$(tput setaf 4) #ORANGE
@@ -37,6 +39,7 @@ if tput setaf 1 &> /dev/null; then
 else
 # Otherwise, use ANSI escape sequences for coloring
   # Original colors from fork
+  TIME_COLOR="\033[1;31m" #MAGENTA
   USER_COLOR="\033[1;31m" #MAGENTA
   PREPOSITION_COLOR="\033[1;37m" #WHITE
   DEVICE_COLOR="\033[1;33m" #ORANGE
