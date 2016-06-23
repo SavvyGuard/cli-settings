@@ -185,7 +185,8 @@ get_prompt_symbol () {
 }
 
 # Define the sexy-bash-prompt
-PS1="\[${BOLD}${USER_COLOR}\]\u \
+PS1="\t \
+\[${BOLD}${USER_COLOR}\]\u \
 \[$PREPOSITION_COLOR\]at \
 \[$DEVICE_COLOR\]\h \
 \[$PREPOSITION_COLOR\]in \
